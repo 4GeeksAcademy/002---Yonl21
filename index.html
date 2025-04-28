@@ -1,37 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand "><i class="fa-brands fa-instagram"></i>Instagram</a>
-      <form class="d-flex">
-        <button class="btn btn-success" type="button">Create a New Post</button>
-      </form>
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark"><i class="fa-brands fa-instagram p-2 text-dark"></i>Instagram</a>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Create a New Post
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Create a New Post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="comment">Caption:</label>
+              <textarea class="form-control" rows="2" id="comment" name="text"
+                placeholder="Add a caption to your post"></textarea>
+
+              <button type="button" class="btn btn-outline-dark mt-1"><i class="fa-solid fa-camera"></i></button>
+              <button type="button" class="btn btn-outline-dark mt-1"><i class="fa-solid fa-location-dot"></i></button>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary">Close</button>
+              <button type="button" class="btn btn-success">Publish</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Dropdown -->
+
     <div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-    <i class="fa-solid fa-gear"></i>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end">
-    <li><a class="dropdown-item" href="#">Profile</a></li>
-    <li><a class="dropdown-item" href="#">Accesibility</a></li>
-    <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Log Out</a></li>
-    
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="fa-solid fa-gear"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Accesibility</a></li>
+        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Nav pills -->
+  <ul class="nav nav-pills justify-content-center" role="">
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#column-view">
+        <i class="fa-solid fa-square"></i></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#grid-view">
+        <i class="fa-solid fa-table-cells"></i></a>
+    </li>
+
+    </li>
   </ul>
 
-</div>
-</nav>
-</body>
-</html>
+  <!-- Parrilla -->
 
+  <div class="tab-content mt-3">
+    <div id="grid-view" class="container tab-pane">
+      <div class="d-grid">
+        <div class="row h-50 g-2">
+          <img class="col-md-4 d-block h-75"
+            src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__medium/public/media/0d/temas/el-caballo-pinto.jpg.webp"
+            alt="" />
+          <img class="col-md-4 d-block h-75"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/BMW2800CS.jpg/1280px-BMW2800CS.jpg" alt="" />
+          <img class="col-md-4 d-block h-75"
+            src="https://media.cntraveler.com/photos/5b4cf9b1bc8649092721971d/16:9/w_1920,c_limit/Fenway-Park_GettyImages-576881804.jpg"
+            alt="" />
+          <img class="col-md-4 d-block h-75"
+            src="https://imgs.search.brave.com/SJBUWX9cHO9SjL6eWVm_puHuCn0m7PLptXzM7ppbmRg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aG9sYS5jb20vaG9y/aXpvbi9sYW5kc2Nh/cGUvZDFlYWFkMjBj/NGM2LWFkb2Jlc3Rv/Y2s0NzQzMjEzNi5q/cGc_aW09UmVzaXpl/PSg2NDApLHR5cGU9/ZG93bnNpemU"
+            alt="" />
+          <img class="col-md-4 d-block h-75"
+            src="https://www.embarcacionesdepesca.com/wp-content/uploads/2024/08/velero-navegando-embarcacionesdepesca-mar-768x576.png"
+            alt="" />
+          <img class="col-md-4 d-block h-75"
+            src="https://media.istockphoto.com/id/576913134/es/foto/plaza-de-espa%C3%B1a-sevilla-espa%C3%B1a.jpg?s=1024x1024&w=is&k=20&c=RP7cEXB38P5KhxghwDFzZo4_TqCVdu3d5cuA7L-ECpU="
+            alt="" />
+          <img class="col-md-4 d-block h-75"
+            src="https://as2.ftcdn.net/v2/jpg/05/05/70/51/1000_F_505705170_wtJCPW9mDHlCuMzWrnYJa3bZ9qdKgJtA.jpg"
+            alt="" />
+          <img class="col-md-4 d-block h-75"
+            src="https://www.weareamundsen.com/wp-content/uploads/2017/02/code-1076536_960_720.jpg" alt="" />
+          <img class="col-md-4 d-block h-75"
+          src="https://i.content4travel.com/seeplaces/temp/9ecc4378-3201-4070-89e8-de66534c9d9c.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna -->
+
+    <div id="column-view" class="container tab-pane">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">Wild Horse</h5>
+          <img
+            src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__medium/public/media/0d/temas/el-caballo-pinto.jpg.webp"
+            alt="">
+          <div class="card-body">
+            <p class="card-text"><strong>2,604 Likes</strong><br>Wild horses couldn't drag me away, wild horses we'll
+              ride
+              them someday</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">BMW 3.0 CSL</h5>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/BMW2800CS.jpg/1280px-BMW2800CS.jpg"
+            alt="">
+          <div class="card-body">
+            <p class="card-text"><strong>1,476 Likes</strong><br>El BMW que no representa a ningun gitano</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">Fenway Park</h5>
+          <img
+            src="https://media.cntraveler.com/photos/5b4cf9b1bc8649092721971d/16:9/w_1920,c_limit/Fenway-Park_GettyImages-576881804.jpg"
+            alt="" />
+          <div class="card-body">
+            <p class="card-text"><strong>4,200 Likes</strong><br>Boston Red Sex</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">Hot Dog</h5>
+          <img
+            src="https://imgs.search.brave.com/SJBUWX9cHO9SjL6eWVm_puHuCn0m7PLptXzM7ppbmRg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aG9sYS5jb20vaG9y/aXpvbi9sYW5kc2Nh/cGUvZDFlYWFkMjBj/NGM2LWFkb2Jlc3Rv/Y2s0NzQzMjEzNi5q/cGc_aW09UmVzaXpl/PSg2NDApLHR5cGU9/ZG93bnNpemU"
+            alt="" />
+          <div class="card-body">
+            <p class="card-text"><strong>5,230 Likes</strong><br>Gordo Bachicha</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">Con diez cañones por banda</h5>
+          <img
+            src="https://www.embarcacionesdepesca.com/wp-content/uploads/2024/08/velero-navegando-embarcacionesdepesca-mar-768x576.png"
+            alt="" />
+          <div class="card-body">
+            <p class="card-text"><strong>3.745 Likes</strong><br>Que es mi barco mi tesoro,
+              Que es mi Dios la libertad,
+              Mi ley, la fuerza y el viento,
+              Mi única patria la mar.</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">Sevilla tiene un color especial</h5>
+          <img
+            src="https://media.istockphoto.com/id/576913134/es/foto/plaza-de-espa%C3%B1a-sevilla-espa%C3%B1a.jpg?s=1024x1024&w=is&k=20&c=RP7cEXB38P5KhxghwDFzZo4_TqCVdu3d5cuA7L-ECpU="
+            alt="" />
+          <div class="card-body">
+            <p class="card-text"><strong>1.745 Likes</strong><br>Sevilla no tiene playa, menuda estafa...</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">La Sucursal del Cielo</h5>
+          <img src="https://as2.ftcdn.net/v2/jpg/05/05/70/51/1000_F_505705170_wtJCPW9mDHlCuMzWrnYJa3bZ9qdKgJtA.jpg"
+            alt="" />
+          <div class="card-body">
+            <p class="card-text"><strong>5,365 Likes</strong><br>Caracas, Caracas</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">Developear</h5>
+          <img src="https://www.weareamundsen.com/wp-content/uploads/2017/02/code-1076536_960_720.jpg" alt="" />
+          <div class="card-body">
+            <p class="card-text"><strong>1 Likes</strong><br>Todos tenemos un amor que nos complica la vida</br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center vh-60">
+        <div class="card mb-3" style="width: 500px">
+          <h5 class="card-title m-2">Me Rio de Janeiro</h5>
+          <img src="https://i.content4travel.com/seeplaces/temp/9ecc4378-3201-4070-89e8-de66534c9d9c.jpg" alt="" />
+          <div class="card-body">
+            <p class="card-text"><strong>4.687 Likes</strong><br>KKKKKKKK</br></p>
+          </div>
+        </div>
+      </div>
+
+</body>
+
+</html>
